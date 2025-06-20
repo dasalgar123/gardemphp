@@ -1,0 +1,10 @@
+.carrusel-promociones { background-color: white; padding: 15px 0; text-align: center;
+                        border-top: 2px solid greenyellow; border-bottom: 2px solid greenyellow;
+                        width: 100%;
+                        box-sizing: border-box;}
+
+.promo-texto {
+  color: black;
+  font-size: 1rem;
+  margin: 0;
+}

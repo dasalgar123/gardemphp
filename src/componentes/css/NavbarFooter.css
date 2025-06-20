@@ -1,0 +1,57 @@
+/* layout.css (Navbar + Footer + Fondo) */
+
+/* Variables de color */
+:root {
+  --primary-color: #2c3e50;       /* azul oscuro serio */
+  --primary-dark: #1a252f;        /* azul más oscuro */
+  --hover-color: #2980b9;         /* azul brillante para hover */
+  --background-gradient-start: #f5f7fa; /* gris muy claro */
+  --background-gradient-end: #e4e7ea;   /* gris claro */
+  --text-light: #fefefe;          /* casi blanco */
+  --text-dark: #333;              /* texto oscuro */
+  --link-color: #2980b9;
+  --link-hover-color: #1c5980;
+}
+
+/* FONDO GENERAL DE LA PÁGINA */
+body { 
+  background: linear-gradient(to bottom, var(--background-gradient-start), var(--background-gradient-end)); 
+  margin: 0; border-color: yellow; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
+  padding-bottom: 80px; /* espacio para footer fijo */  color: var(--text-dark);}
+
+/* NAVBAR */
+
+.navbar { 
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)); padding: 1rem 2rem; 
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15); position: sticky; top: 0; z-index: 100;}
+
+.navbar-list { display: flex; list-style: none; margin: 0; padding: 0; gap: 10rem; align-items: center; 
+   justify-content: center; flex-direction: row;}
+
+.navbar-item { position: relative;}
+.navbar-link { color: var(--text-light); text-decoration: none; font-weight: 600; padding: 0.75rem 1.5rem;
+  border-radius: 8px; transition: all 0.3s ease; position: relative; overflow: hidden;}
+
+ .navbar-link:hover { background-color: rgba(255, 255, 255, 0.15); transform: translateY(-2px);
+   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);}
+
+ .navbar-link::before { content: ''; position: absolute; bottom: 0; left: 50%; width: 0; height: 2px; 
+  background: var(--hover-color);  transition: all 0.3s ease; transform: translateX(-50%);}
+
+.navbar-link:hover::before { width: 80%;}
+
+.navbar-link::after { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; 
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2),  transparent); transition: left 0.5s;}
+
+.navbar-link:hover::after { left: 100%;}
+.navbar-link:active { transform: translateY(0);}
+
+
+/* Responsive */
+@media (max-width: 768px) { .navbar { padding: 1rem;}
+  .navbar-list { flex-wrap: wrap; gap: 1rem; justify-content: center; }
+  .navbar-link { padding: 0.5rem 1rem; font-size: 0.9rem; }}
+
+  @media (max-width: 480px) {
+  .navbar-list { flex-direction: column; gap: 0.5rem;}
+  .navbar-link { width: 100%; text-align: center;}}

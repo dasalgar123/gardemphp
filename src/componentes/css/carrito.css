@@ -1,0 +1,63 @@
+/* src/componentes/css/carrito.css */
+
+.carrito-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.carrito-form h4 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+  font-size: 0.9em;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
+.btn-whatsapp {
+  background-color: #25d366;
+  color: black;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-whatsapp:hover {
+  background-color: #128c7e;
+}
+
+.catalogo-carrito h3 {
+    color: black;
+}
+.catalogo-carrito li {
+    color: black;
+} 

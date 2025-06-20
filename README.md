@@ -1,70 +1,156 @@
-# Getting Started with Create React App
+# Catálogo Gardel - React + MySQL
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Un catálogo de productos desarrollado con React.js y conectado a una base de datos MySQL.
 
-## Available Scripts
+## 🚀 Características
 
-In the project directory, you can run:
+- **Frontend**: React.js con componentes modulares
+- **Backend**: Node.js + Express
+- **Base de Datos**: MySQL
+- **Funcionalidades**:
+  - Catálogo de productos dinámico
+  - Filtrado por categorías
+  - Ordenamiento por precio
+  - Carrito de compras
+  - Selección de colores y tallas
+  - Sistema de pedidos
 
-### `npm start`
+## 📋 Requisitos Previos
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Node.js (versión 14 o superior)
+- MySQL Server
+- npm o yarn
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Instalación
 
-### `npm test`
+1. **Clonar el repositorio**
+   ```bash
+   git clone <url-del-repositorio>
+   cd catalogoRopa
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. **Instalar dependencias**
+   ```bash
+   npm install
+   ```
 
-### `npm run build`
+3. **Configurar la base de datos**
+   - Asegúrate de que MySQL esté corriendo
+   - Crea una base de datos llamada `gardelcatalogo`
+   - Importa las tablas necesarias (categorias, colores, productos, tallas, etc.)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. **Configurar variables de entorno**
+   - Crea un archivo `.env` en la raíz del proyecto
+   - Configura las credenciales de tu base de datos:
+   ```
+   DB_HOST=localhost
+   DB_USER=tu_usuario
+   DB_PASSWORD=tu_contraseña
+   DB_NAME=gardelcatalogo
+   PORT=5000
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🚀 Ejecución
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Opción 1: Ejecutar todo junto (Recomendado)
+```bash
+npm run dev
+```
+Esto ejecutará tanto el servidor backend (puerto 5000) como el frontend (puerto 3001).
 
-### `npm run eject`
+### Opción 2: Ejecutar por separado
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**Backend:**
+```bash
+npm run server
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Frontend (en otra terminal):**
+```bash
+npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 📊 Estructura de la Base de Datos
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Tablas Principales:
+- **categorias**: Categorías de productos
+- **colores**: Colores disponibles
+- **productos**: Información de productos
+- **tallas**: Tallas disponibles
+- **inventario_tallas_colores_categorias**: Relación de inventario
+- **pedidos**: Pedidos de clientes
+- **detalle_pedidos**: Detalles de pedidos
+- **mensajes_pedidos**: Mensajes relacionados
 
-## Learn More
+## 🔧 Configuración del Backend
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+El servidor backend (`server.js`) incluye las siguientes rutas API:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- `GET /api/productos` - Obtener todos los productos
+- `GET /api/categorias` - Obtener categorías
+- `GET /api/colores` - Obtener colores
+- `GET /api/tallas` - Obtener tallas
+- `GET /api/inventario/:productoId` - Obtener inventario por producto
+- `POST /api/pedidos` - Crear nuevo pedido
 
-### Code Splitting
+## 📁 Estructura del Proyecto
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+catalogoRopa/
+├── src/
+│   ├── componentes/
+│   │   ├── elementos/     # Componentes reutilizables
+│   │   ├── vistas/        # Vistas principales
+│   │   └── css/          # Estilos CSS
+│   ├── services/
+│   │   └── api.js        # Servicios para conectar con el backend
+│   └── App.js            # Componente principal
+├── server.js             # Servidor backend
+├── package.json
+└── README.md
+```
 
-### Analyzing the Bundle Size
+## 🎨 Personalización
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Cambiar el título
+Edita el archivo `src/componentes/vistas/VistaACatalogo.js` y modifica la línea:
+```javascript
+<ElementoTitulo texto="Gardel" />
+```
 
-### Making a Progressive Web App
+### Modificar estilos
+Los estilos están organizados en archivos CSS separados en `src/componentes/css/`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 🔍 Solución de Problemas
 
-### Advanced Configuration
+### Error de conexión a la base de datos
+1. Verifica que MySQL esté corriendo
+2. Confirma las credenciales en el archivo `server.js`
+3. Asegúrate de que la base de datos `gardelcatalogo` exista
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Error de CORS
+El servidor ya incluye configuración CORS. Si persisten problemas, verifica que el frontend esté corriendo en el puerto correcto.
 
-### Deployment
+### Productos no se cargan
+1. Verifica que el servidor backend esté corriendo en el puerto 5000
+2. Revisa la consola del navegador para errores
+3. Confirma que las tablas de la base de datos tengan datos
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 📝 Notas
 
-### `npm run build` fails to minify
+- El frontend corre en `http://localhost:3001`
+- El backend corre en `http://localhost:5000`
+- Los datos se cargan dinámicamente desde la base de datos MySQL
+- El carrito de compras funciona en memoria (se reinicia al recargar la página)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 🤝 Contribución
+
+1. Fork el proyecto
+2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
+3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. Push a la rama (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
+
+## 📄 Licencia
+
+Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
