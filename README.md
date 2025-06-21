@@ -1,4 +1,4 @@
-# Catálogo Gardel - React + MySQL
+# Catálogo Gardem - React + MySQL
 
 Un catálogo de productos desarrollado con React.js y conectado a una base de datos MySQL.
 
@@ -115,7 +115,7 @@ catalogoRopa/
 ### Cambiar el título
 Edita el archivo `src/componentes/vistas/VistaACatalogo.js` y modifica la línea:
 ```javascript
-<ElementoTitulo texto="Gardel" />
+<ElementoTitulo texto="Gardem" />
 ```
 
 ### Modificar estilos
