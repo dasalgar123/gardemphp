@@ -1,3 +1,5 @@
+
+
 <?php
 // Filtrar productos por categoría
 $productosMostrados = $ElementoProductos;
@@ -25,6 +27,23 @@ function getImageUrl($producto) {
     }
     return 'img/logo/logo.jpg'; // Imagen por defecto
 }
+
+// Función para obtener la clase CSS de categoría
+function getCategoriaClass($categoria) {
+    $categoriaLower = strtolower($categoria);
+    switch ($categoriaLower) {
+        case 'caballeros':
+            return 'categoria-caballeros';
+        case 'damas':
+            return 'categoria-damas';
+        case 'niños':
+            return 'categoria-ninos';
+        case 'niñas':
+            return 'categoria-ninas';
+        default:
+            return 'categoria-todos';
+    }
+}
 ?>
 
 <div class="catalogo-container">
@@ -32,7 +51,7 @@ function getImageUrl($producto) {
         <div class="titulo-container">
             <h1 class="titulo-principal">Gardem</h1>
         </div>
-        <h2><?php echo htmlspecialchars($categoriaSeleccionada); ?></h2>
+        <h2 class="<?php echo getCategoriaClass($categoriaSeleccionada); ?>"><?php echo htmlspecialchars($categoriaSeleccionada); ?></h2>
         
         <div class="catalogo-grid">
             <?php if (!empty($productosMostrados)): ?>

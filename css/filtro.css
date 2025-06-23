@@ -1,0 +1,127 @@
+.filtro-precio {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.filtro-precio label {
+    color: white;
+    font-weight: 600;
+    margin-right: 1rem;
+    font-size: 0.95rem;
+}
+
+.filtro-precio select {
+    background-color: white;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 200px;
+}
+
+.filtro-precio select:focus {
+    border-color: #00ff41;
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
+    outline: none;
+}
+
+.filtro-precio select:hover {
+    border-color: #00ff41;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .filtro-precio {
+        padding: 0.8rem;
+    }
+    
+    .filtro-precio label {
+        display: block;
+        margin-bottom: 0.5rem;
+        margin-right: 0;
+    }
+    
+    .filtro-precio select {
+        width: 100%;
+        min-width: auto;
+    }
+}
+
+/* Estilos para filtros */
+.filtro-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.filtro-titulo {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.filtro-opciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.filtro-opcion {
+    position: relative;
+}
+
+.filtro-opcion input[type="radio"] {
+    display: none;
+}
+
+.filtro-boton {
+    padding: 0.6rem 1.2rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.filtro-opcion input[type="radio"]:checked + .filtro-boton {
+    background: #4682b4;
+    border-color: #4682b4;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.filtro-boton:hover {
+    background: rgba(70, 130, 180, 0.2);
+    border-color: #4682b4;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .filtro-container {
+        padding: 1rem;
+    }
+    
+    .filtro-opciones {
+        gap: 0.5rem;
+    }
+    
+    .filtro-boton {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+} 

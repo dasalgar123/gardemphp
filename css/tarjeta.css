@@ -1,0 +1,292 @@
+.tarjeta-contenedorPrincipal {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 280px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+}
+
+.tarjeta-contenedorPrincipal::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    pointer-events: none;
+    z-index: -1;
+}
+
+.tarjeta-contenedorVisual {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.tarjeta-imagen {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tarjeta-informacionPermanente {
+    padding: 1rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.tarjeta-titulo {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+    min-height: 2.2rem;
+}
+
+.tarjeta-descripcion {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.85rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.4;
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.3s ease;
+    max-height: none;
+    overflow: visible;
+}
+
+.tarjeta-contenedorPrincipal:hover .tarjeta-descripcion {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: none;
+    margin-bottom: 0.8rem;
+}
+
+.tarjeta-opciones {
+    margin-bottom: 0.8rem;
+    transition: all 0.3s ease;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.tarjeta-contenedorPrincipal:hover .tarjeta-opciones {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.tarjeta-opciones p {
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 0.4rem;
+    font-size: 0.85rem;
+}
+
+.tarjeta-contenedorOpciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    align-items: center;
+}
+
+/* Estilos para colores */
+.color-option {
+    position: relative;
+}
+
+.color-option input[type="radio"] {
+    display: none;
+}
+
+.tarjeta-puntoColor {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.color-option input[type="radio"]:checked + .tarjeta-puntoColor {
+    border: 2px solid #4682b4;
+    transform: scale(1.1);
+    box-shadow: 0 0 8px rgba(70, 130, 180, 0.4);
+}
+
+.tarjeta-puntoColor:hover {
+    transform: scale(1.05);
+    border-color: #4682b4;
+}
+
+/* Estilos para tallas */
+.talla-option {
+    position: relative;
+}
+
+.talla-option input[type="radio"] {
+    display: none;
+}
+
+.tarjeta-opcionTalla {
+    padding: 0.3rem 0.6rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    font-weight: 500;
+    min-width: 30px;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.talla-option input[type="radio"]:checked + .tarjeta-opcionTalla {
+    border: 1px solid #4682b4;
+    background: #4682b4;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.tarjeta-opcionTalla:hover {
+    border-color: #4682b4;
+    background: rgba(70, 130, 180, 0.2);
+}
+
+/* Estilos para cantidad */
+.tarjeta-contenedorCantidad {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    max-width: 100px;
+    margin-bottom: 0.8rem;
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.3s ease;
+}
+
+.tarjeta-contenedorPrincipal:hover .tarjeta-contenedorCantidad {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.cantidad-btn {
+    width: 28px;
+    height: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.cantidad-btn:hover {
+    background: #4682b4;
+    border-color: #4682b4;
+}
+
+.cantidad-input {
+    width: 40px;
+    height: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    text-align: center;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    font-size: 0.9rem;
+}
+
+.cantidad-input:focus {
+    outline: none;
+    border-color: #4682b4;
+    box-shadow: 0 0 5px rgba(70, 130, 180, 0.3);
+}
+
+.tarjeta-precio {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #4682b4;
+    margin-bottom: 0.1rem;
+    text-align: center;
+}
+
+.tarjeta-boton {
+    background: #4682b4;
+    color: #ffffff;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: auto;
+    box-shadow: 0 2px 8px rgba(70, 130, 180, 0.3);
+}
+
+.tarjeta-boton:hover {
+    background: #5a9bd4;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(70, 130, 180, 0.4);
+}
+
+.tarjeta-boton:active {
+    transform: translateY(0);
+}
+
+.tarjeta-boton:disabled {
+    background: rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.6);
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .tarjeta-contenedorPrincipal {
+        max-width: 260px;
+        border-radius: 8px;
+    }
+    
+    .tarjeta-contenedorVisual {
+        height: 180px;
+    }
+    
+    .tarjeta-informacionPermanente {
+        padding: 0.8rem;
+    }
+    
+    .tarjeta-titulo {
+        font-size: 1rem;
+    }
+    
+    .tarjeta-precio {
+        font-size: 1.2rem;
+    }
+    
+    .tarjeta-boton {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.8rem;
+    }
+} 
