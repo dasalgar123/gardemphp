@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Catálogo Gardem - React + MySQL
 
 Un catálogo de productos desarrollado con React.js y conectado a una base de datos MySQL.
@@ -154,3 +155,6 @@ El servidor ya incluye configuración CORS. Si persisten problemas, verifica que
 ## 📄 Licencia
 
 Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
+=======
+# gardemphp
+>>>>>>> 20ff664290709adc3e75245327b44674432b3547
