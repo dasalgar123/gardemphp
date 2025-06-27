@@ -1,0 +1,913 @@
+/*
+==========================================
+  CSS UNIFICADO - CATÁLOGO DE ROPA GARDEM
+  Archivo: index.css
+==========================================
+*/
+
+/* ===================== RESET Y BASE ===================== */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #ffffff;
+    color: #000000;
+    line-height: 1.6;
+}
+
+/* ===================== HEADER ===================== */
+.App-header {
+    background: #ffffff;
+    padding: 20px;
+    border-bottom: 3px solid #333333;
+    text-align: center;
+}
+
+.App-header .titulo-principal {
+    color: #000000;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* ===================== CONTENEDOR PRINCIPAL ===================== */
+.container {
+    width: 100%;
+    max-width: 1800px;
+    margin: 0 auto;
+    background: #ffffff;
+}
+
+/* ===================== CARRUSEL ===================== */
+.carrusel-container {
+    width: 100%;
+    background: #f8f8f8;
+    padding: 20px 0;
+    border-bottom: 2px solid #333333;
+}
+
+.carrusel-promociones {
+    background: #f8f8f8;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 2px solid #333333;
+}
+
+.carrusel-promociones marquee {
+    color: #000000;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+/* ===================== TÍTULO ===================== */
+.titulo-container {
+    width: 100%;
+    background: #ffffff;
+    padding: 30px 20px;
+    text-align: center;
+    border-bottom: 2px solid #333333;
+}
+
+.titulo-principal {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #000000;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* ===================== NAVEGACIÓN Y FILTROS ===================== */
+.nav-filtro-container {
+    width: 100%;
+    background: #f8f8f8;
+    padding: 20px;
+    border-bottom: 2px solid #333333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.nav-categorias {
+    flex: 1;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.nav-link {
+    background: #ffffff;
+    color: #000000;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 2px solid #333333;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    background: #333333;
+    color: #ffffff;
+}
+
+.nav-link.categoria-activa {
+    background: #000000;
+    color: #ffffff;
+}
+
+.filtro {
+    background: #ffffff;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 2px solid #333333;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 250px;
+}
+
+.filtro label {
+    color: #000000;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.filtro select {
+    padding: 8px 12px;
+    border: 2px solid #333333;
+    border-radius: 5px;
+    background: #ffffff;
+    color: #000000;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+}
+
+.filtro select:focus {
+    outline: none;
+    border-color: #000000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ===================== CATÁLOGO Y CESTA ===================== */
+.catalogo-cesta-container {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    min-height: 600px;
+}
+
+.catalogo-container {
+    width: 100%;
+    background: #ffffff;
+    padding: 20px;
+}
+
+.productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background: #ffffff;
+}
+
+/* ===================== TARJETAS DE PRODUCTOS ===================== */
+.tarjeta-contenedorPrincipal {
+    background: #ffffff;
+    border: 2px solid #333333;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.tarjeta-contenedorPrincipal:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.producto-imagen-container {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #333333;
+}
+
+.producto-imagen {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.producto-imagen-container:hover .producto-imagen {
+    transform: scale(1.05);
+}
+
+.tarjeta-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(0,0,0,0.1), rgba(0,0,0,0.05));
+    pointer-events: none;
+}
+
+.tarjeta-informacionPermanente {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.tarjeta-titulo {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #000000;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.tarjeta-descripcion {
+    color: #666666;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin: 0;
+    min-height: 40px;
+}
+
+.producto-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.tarjeta-opciones {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: left;
+}
+
+.tarjeta-opciones::before {
+    content: attr(data-label);
+    font-weight: bold;
+    color: #000000;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.tarjeta-opciones select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 2px solid #333333;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #000000;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tarjeta-opciones select:focus {
+    outline: none;
+    border-color: #000000;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.tarjeta-opciones select option {
+    background: #ffffff;
+    color: #000000;
+    padding: 8px;
+}
+
+.no-disponible {
+    color: #999999;
+    font-style: italic;
+    font-size: 0.85rem;
+    text-align: center;
+    padding: 8px;
+    background: #f5f5f5;
+    border-radius: 5px;
+    border: 1px solid #dddddd;
+}
+
+.tarjeta-contenedorCantidad {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.cantidad-btn {
+    background: #333333;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cantidad-btn:hover {
+    background: #000000;
+    transform: scale(1.1);
+}
+
+.cantidad-btn:active {
+    transform: scale(0.95);
+}
+
+.cantidad-input {
+    width: 60px;
+    text-align: center;
+    border: 2px solid #333333;
+    border-radius: 8px;
+    padding: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    background: #ffffff;
+    color: #000000;
+}
+
+.cantidad-input:focus {
+    outline: none;
+    border-color: #000000;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.tarjeta-precio {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #000000;
+    margin: 10px 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.tarjeta-boton {
+    background: linear-gradient(135deg, #000000, #333333);
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    padding: 15px 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.tarjeta-boton:hover {
+    background: linear-gradient(135deg, #333333, #000000);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.tarjeta-boton:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.tarjeta-boton:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* ===================== CESTA DE PEDIDO ===================== */
+.pedido {
+    width: 30%;
+    background: rgba(248, 248, 248, 0.95);
+    border-radius: 15px;
+    padding: 20px;
+    border: 3px solid #333333;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    overflow-y: auto;
+    max-height: 600px;
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 20px;
+}
+
+.pedido-resumen h2 {
+    color: #000000;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+    border-bottom: 2px solid #333333;
+    padding-bottom: 0.5rem;
+}
+
+.contenedor-btn-vaciar {
+    text-align: right;
+    margin-bottom: 1rem;
+}
+
+.btn-vaciar-pedido {
+    background: #333333;
+    color: white;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.btn-vaciar-pedido:hover {
+    background: #000000;
+}
+
+.tabla-pedido {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #333333;
+    font-size: 0.9rem;
+}
+
+.tabla-pedido th,
+.tabla-pedido td {
+    padding: 0.8rem;
+    text-align: left;
+    border-bottom: 1px solid #333333;
+}
+
+.tabla-pedido th {
+    background: #000000;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+.tabla-pedido tfoot tr {
+    background: #f8f8f8;
+    font-weight: bold;
+}
+
+.btn-eliminar-producto {
+    background: #ff4444;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.4rem 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    font-size: 0.8rem;
+}
+
+.btn-eliminar-producto:hover {
+    background: #cc0000;
+}
+
+/* ===================== FORMULARIO CLIENTE ===================== */
+.form-cliente-container {
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 15px;
+    margin: 1.5rem 0;
+    border: 2px solid #333333;
+}
+
+.form-cliente-container h3 {
+    color: #000000;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.form-cliente {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-grupo-cliente {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-grupo-cliente label {
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+    color: #000000;
+    font-size: 0.9rem;
+}
+
+.form-grupo-cliente input {
+    padding: 0.6rem;
+    border: 2px solid #333333;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #000000;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.form-grupo-cliente input:focus {
+    outline: none;
+    border-color: #000000;
+    background: #f8f8f8;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-grupo-cliente input::placeholder {
+    color: #999999;
+}
+
+/* ===================== BOTONES WHATSAPP ===================== */
+.contenedor-botones-pedido {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+}
+
+.btn-whatsapp {
+    background: #25d366;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-whatsapp:hover {
+    background: #128c7e;
+    transform: translateY(-2px);
+}
+
+.btn-whatsapp:active {
+    transform: translateY(0);
+}
+
+/* ===================== MENSAJES ===================== */
+.mensaje {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-weight: 600;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    border: 2px solid;
+    max-width: 300px;
+    animation: slideIn 0.5s ease;
+}
+
+.mensaje.exito {
+    background: rgba(40, 167, 69, 0.9);
+    color: white;
+    border-color: #28a745;
+}
+
+.mensaje.error {
+    background: rgba(220, 53, 69, 0.9);
+    color: white;
+    border-color: #dc3545;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* ===================== EFECTOS DE FONDO ===================== */
+.floating-particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.particle {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    animation: float 10s infinite linear;
+}
+
+@keyframes float {
+    0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 1200px) {
+    .catalogo-cesta-container {
+        flex-direction: column;
+    }
+    
+    .catalogo-container {
+        width: 100%;
+    }
+    
+    .pedido {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+        position: relative;
+        top: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0;
+    }
+    
+    .App-header .titulo-principal {
+        font-size: 2rem;
+    }
+    
+    .titulo-principal {
+        font-size: 2rem;
+    }
+    
+    .nav-filtro-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+    
+    .nav-categorias {
+        justify-content: center;
+    }
+    
+    .filtro {
+        min-width: auto;
+        justify-content: center;
+    }
+    
+    .productos {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 15px;
+        padding: 15px;
+    }
+    
+    .pedido {
+        padding: 15px;
+    }
+    
+    .contenedor-botones-pedido {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn-whatsapp {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+    }
+    
+    .tabla-pedido th:nth-child(2),
+    .tabla-pedido td:nth-child(2) {
+        display: none;
+    }
+    
+    .mensaje {
+        top: 10px;
+        right: 10px;
+        left: 10px;
+        max-width: none;
+    }
+    
+    .tarjeta-contenedorPrincipal {
+        padding: 15px;
+    }
+    
+    .producto-imagen-container {
+        height: 200px;
+    }
+    
+    .tarjeta-titulo {
+        font-size: 1.1rem;
+    }
+    
+    .tarjeta-descripcion {
+        font-size: 0.9rem;
+    }
+    
+    .tarjeta-precio {
+        font-size: 1.4rem;
+    }
+    
+    .tarjeta-boton {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .App-header .titulo-principal {
+        font-size: 1.5rem;
+    }
+    
+    .titulo-principal {
+        font-size: 1.5rem;
+    }
+    
+    .productos {
+        grid-template-columns: 1fr;
+    }
+    
+    .nav-link {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+    
+    .pedido {
+        padding: 10px;
+    }
+    
+    .tarjeta-contenedorPrincipal {
+        padding: 12px;
+    }
+    
+    .producto-imagen-container {
+        height: 180px;
+    }
+    
+    .tarjeta-titulo {
+        font-size: 1rem;
+    }
+    
+    .tarjeta-descripcion {
+        font-size: 0.85rem;
+    }
+    
+    .tarjeta-precio {
+        font-size: 1.3rem;
+    }
+    
+    .tarjeta-boton {
+        padding: 10px 15px;
+        font-size: 0.85rem;
+    }
+}
+
+/* ===================== VISTA CESTA COMPLETA ===================== */
+.cesta-completa-container {
+    width: 100%;
+    padding: 20px;
+    min-height: 600px;
+    background: #ffffff;
+}
+
+.cesta-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    background: #ffffff;
+}
+
+/* Modificar la cesta para que ocupe todo el ancho en la vista separada */
+.cesta-container .pedido {
+    width: 100%;
+    max-width: none;
+    position: relative;
+    top: auto;
+    max-height: none;
+    overflow-y: visible;
+}
+
+/* Botón flotante para ir a la cesta */
+.btn-cesta-flotante {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(135deg, #000000, #333333);
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-cesta-flotante:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.btn-cesta-flotante .contador {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #ff4444;
+    color: #ffffff;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ffffff;
+}
+
+/* Responsive para la vista de cesta */
+@media (max-width: 768px) {
+    .cesta-completa-container {
+        padding: 15px;
+    }
+    
+    .cesta-container {
+        max-width: 100%;
+    }
+    
+    .btn-cesta-flotante {
+        bottom: 20px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+        font-size: 1.3rem;
+    }
+    
+    .btn-cesta-flotante .contador {
+        width: 22px;
+        height: 22px;
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .cesta-completa-container {
+        padding: 10px;
+    }
+    
+    .btn-cesta-flotante {
+        bottom: 15px;
+        right: 15px;
+        width: 55px;
+        height: 55px;
+        font-size: 1.2rem;
+    }
+} 
